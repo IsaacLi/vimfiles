@@ -23,14 +23,14 @@
 " -----------------------------------------------------------------------------  
 
 set nocompatible
+" change the mapleader from \ to ,
+let mapleader=","
+imap jj <Esc>
 
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundles directory
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
-
-" change the mapleader from \ to ,
-let mapleader=","
 
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
@@ -44,7 +44,7 @@ function! Tabstyle_tabs()
   autocmd User Rails set softtabstop=4
   autocmd User Rails set shiftwidth=4
   autocmd User Rails set tabstop=4
-  autocmd User Rails set expandtab
+  autocmd User Rails set noexpandtab
 endfunction
 
 function! Tabstyle_spaces()
@@ -106,8 +106,6 @@ set linebreak  " Wrap at word
 
 
 " Mappings ********************************************************************
-" Professor VIM says '87% of users prefer jj over esc', jj abrams strongly disagrees
-imap jj <Esc>
 
 " Directories *****************************************************************
 " Setup backup location and enable
@@ -178,6 +176,7 @@ set nolist
 "imap <down> <C-o>gj
 "map E ge
 
+map <Leader>p <C-^> " Go to previous file"
 
 " Ruby stuff ******************************************************************
 "compiler ruby         " Enable compiler support for ruby
@@ -232,6 +231,8 @@ let g:AutoComplPop_BehaviorKeywordLength = 2
 let g:AutoComplPop_BehaviorHtmlOmniLength = 0
 
 
+" Sparkup ********************************************************************
+let g:sparkupExecuteMapping = '<c-s>'
 
 " -----------------------------------------------------------------------------  
 " |                             OS Specific                                   |
