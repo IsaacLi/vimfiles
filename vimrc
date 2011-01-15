@@ -146,7 +146,7 @@ set virtualedit=all
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.o,*.obj,.git,.hg,*.beam,*.pyc,*.so,*.class
-set title                " change the terminal's title
+" set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep"
 
@@ -210,9 +210,9 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 let NERDTreeHijackNetrw=1
 
 " Single click for everything
-let NERDTreeMouseMode=1
+" let NERDTreeMouseMode=1
 
-let NERDTreeIgnore=['\.svn$', '\~$', '\.pyc$', '\.beam$', '\.gz$'] 
+let NERDTreeIgnore=['\.git$', '\.svn$', '\~$', '\.pyc$', '\.beam$', '\.gz$'] 
 
 " SnippetsEmu *****************************************************************
 "imap <unique> <C-j> <Plug>Jumper

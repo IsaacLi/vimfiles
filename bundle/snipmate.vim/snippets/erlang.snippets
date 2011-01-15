@@ -38,7 +38,10 @@ snippet case
 snippet rec
 	-record(${1:record}, {
 	    ${2:field}=${3:value}}).${4}
-
+# io:format
+snippet iof
+	io:format("${1:string}~p~n", [${2:args}]),
+# genserver
 snippet genserver
 	%%%-------------------------------------------------------------------
 	%%% File    : `Filename('', 'my')`.erl
@@ -53,7 +56,7 @@ snippet genserver
 	-behaviour(gen_server).
 
 	%% API
-	-export(start_link/0,${3}).
+	-export([start_link/0,${3}]).
 
 	%% gen_server callbacks
 	-export([init/1, handle_call/3, handle_cast/2, handle_info/2,
@@ -136,7 +139,7 @@ snippet genserver
 	%%====================================================================
 	%% Internal Functions
 	%%====================================================================
-
+# genfsm
 snippet genfsm
 	%%%-------------------------------------------------------------------
 	%%% File    : `Filename('', 'my')`.erl
