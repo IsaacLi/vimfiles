@@ -19,11 +19,11 @@ let g:erlangHighlightBif=1
 let g:snips_author="Zola Zhou <zolazhou@gmail.com>"
 
 nnoremap <silent> <F4>
-            \ :!ctags -f %:p:h/tags
+            \ :!ctags -f tags
             \ --recurse -R --totals=yes
             \ --tag-relative=yes
             \ --extra=+q --fields=+i
-            \ --PHP-kinds=+cf-v %:p:h<CR>
+            \ --PHP-kinds=+cf-v <CR>
 
 
 let g:user_zen_settings = {
@@ -43,3 +43,4 @@ autocmd BufNewFile,BufRead *.{md,mkd}  set ai formatoptions=tcroqn2 comments=n:&
 
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
+hi ColorColumn  guibg=#7F7F7F  ctermbg=lightgray
