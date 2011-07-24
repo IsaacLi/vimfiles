@@ -176,7 +176,11 @@ set nolist
 "imap <down> <C-o>gj
 "map E ge
 
-map <Leader>p <C-^> " Go to previous file"
+map <Leader>p <C-^> " Go to previous file
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
 
 " Ruby stuff ******************************************************************
 "compiler ruby         " Enable compiler support for ruby
