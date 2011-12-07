@@ -12,7 +12,7 @@ let Tlist_Use_Right_Window=1
 let Tlist_Close_On_Select=1
 nnoremap <silent> <leader>s :TlistToggle<CR>
 
-let g:AutoCloseOff=1
+" let g:AutoCloseOff=1
 
 let g:erlangHighlightBif=1
 
@@ -44,3 +44,5 @@ autocmd BufNewFile,BufRead *.{md,mkd}  set ai formatoptions=tcroqn2 comments=n:&
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 hi ColorColumn  guibg=#111111  ctermbg=darkgray
+
+au BufNewFile,BufRead *.j,Jakefile setf objj

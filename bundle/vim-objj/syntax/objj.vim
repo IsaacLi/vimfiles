@@ -1,9 +1,9 @@
 " Vim syntax file
 " Language:	Objective-J
 " Maintainer:	Shawn MacIntyre <sdm@openradical.com>
-" Updaters:	
-" URL:		
-" Changes:	(sm) merged javascript syntax Claudio Fleiner and Scott Shattuck and objc syntax by Kazunobu Kuriyama and Anthony Hodsdon 
+" Updaters:
+" URL:
+" Changes:	(sm) merged javascript syntax Claudio Fleiner and Scott Shattuck and objc syntax by Kazunobu Kuriyama and Anthony Hodsdon
 " Last Change:	2008 Sep 8
 
 " For version 5.x: Clear all syntax items
@@ -67,7 +67,7 @@ syn region objjKeyForMethodParam display
 
 " Objective-C Constant Strings
 syn match objjSpecial display "%@" contained
-syn region objjString start=+\(@"\|"\)+ skip=+\\\\\|\\"+ end=+"+ contains=cFormat,cSpecial,objcSpecial
+syn region objjString start=+\(@"\|"\)+ skip=+\\\\\|\\"+ end=+"+ contains=cFormat,cSpecial,objjSpecial
 
 " Objective-C Message Expressions
 syn region objjMessage display start="\[" end="\]" contains=objjMessage,objjStatement,objjType,objjTypeModifier,objjString,objjConstant,objjDirective
@@ -85,7 +85,7 @@ syn region  objjStringD	       start=+"+  skip=+\\\\\|\\"+  end=+"\|$+  contains
 syn region  objjStringS	       start=+'+  skip=+\\\\\|\\'+  end=+'\|$+  contains=objjSpecial,@htmlPreproc
 
 syn match   objjSpecialCharacter "'\\.'"
-syn match   objjNumber	       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
+syn match   objjNumber	       "[+-]\=\(\d\+\.\=\d*\|\.\d\+\)\([Ee]\d\+\)\=\|-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn region  objjRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gi]\{0,2\}\s*$+ end=+/[gi]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
 
 syn keyword objjConditional	if else switch
@@ -101,9 +101,9 @@ syn keyword objjLabel		case default
 syn keyword objjException	try catch finally throw
 syn keyword objjMessage		alert confirm prompt status
 syn keyword objjGlobal		self window top parent
-syn keyword objjMember		document event location 
+syn keyword objjMember		document event location
 syn keyword objjDeprecated	escape unescape
-syn keyword objjReserved	abstract boolean byte char class const debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
+syn keyword objjReserved	abstract boolean byte char class const debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile
 
 if exists("objj_fold")
     syn match	objjFunction      "\<function\>"
@@ -166,7 +166,7 @@ if version >= 508 || !exists("did_objj_syn_inits")
   HiLink objjMessage		Keyword
   HiLink objjGlobal		Keyword
   HiLink objjMember		Keyword
-  HiLink objjDeprecated		Exception 
+  HiLink objjDeprecated		Exception
   HiLink objjReserved		Keyword
   HiLink objjDebug		Debug
   HiLink objjConstant		Label
